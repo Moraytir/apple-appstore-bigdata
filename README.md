@@ -4,7 +4,7 @@ Analysis of **1.23 million Apple App Store apps** with PySpark, SQL and scikit-l
 
 > 🇹🇭 **สรุปสั้น ๆ:** วิเคราะห์แอปบน App Store 1.23 ล้านแอป ว่าแอปแบบไหนมีโอกาสได้รับความนิยม (วัดจากจำนวนรีวิว) พบว่าตลาดกระจุกตัวสุดขีด (แอป 1% บนสุดถือรีวิว 95.8%) และ "ขนาดแอป" ทำนายความสำเร็จได้ดีกว่า "ฟรีหรือเสียเงิน" มีเว็บให้ลองจำลองแอปของตัวเองได้
 
-**🔗 Live demo:** `<add your GitHub Pages link here>`
+**🔗 Live demo:** `(https://moraytir.github.io/apple-appstore-bigdata/)`
 
 ## Key findings
 
