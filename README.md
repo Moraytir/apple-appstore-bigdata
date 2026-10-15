@@ -4,7 +4,7 @@ Analysis of **1.23 million Apple App Store apps** with PySpark, Spark SQL, Spark
 
 > 🇹🇭 **สรุปสั้น ๆ:** วิเคราะห์แอปบน App Store 1.23 ล้านแอป ว่าแอปแบบไหนมีโอกาสได้รับความนิยม (วัดจากจำนวนรีวิว) พบว่าตลาดกระจุกตัวสุดขีด (แอป 1% บนสุดถือรีวิว 95.8%) โมเดล Spark MLlib ทำนายแอปที่ติดตลาดได้ ROC-AUC 0.884 โดยไม่ได้อาศัยแค่อายุแอป และ k-means แบ่งแอปเป็น 4 กลุ่ม ตั้งแต่ "ดาวเด่น" ถึง "ซอมบี้จากโรงงานแอป" มีเว็บให้ลองจำลองแอปของตัวเองได้
 
-**🔗 Live demo:** `<add your GitHub Pages link here>`
+**🔗 Live demo:** https://moraytir.github.io/apple-appstore-bigdata/
 
 Course project for 040563105 Statistical Analysis for Big Data (KMITNB).
 
