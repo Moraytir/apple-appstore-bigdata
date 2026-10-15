@@ -21,7 +21,7 @@ Analysis of **1.23 million Apple App Store apps** with PySpark, SQL and scikit-l
 
 ## Web explorer
 
-A single-page site (`docs/index.html`) that runs entirely in the browser on a pre-aggregated table (`results/cube_for_web.csv`).
+A single-page site (`docs/index.html`) that runs entirely in the browser on a pre-aggregated table (`results/cube for web.csv`).
 
 - **App simulator:** pick genre, free/paid, size, team type and cohort, then see how similar apps performed against the market, and what changes if you vary one factor at a time.
 - **Explorer:** preset questions and free filtering with comparison charts.
@@ -33,15 +33,22 @@ The design follows the GreenLeaf design system.
 
 ```
 ├── README.md
-├── notebooks/
+├── .github/workflows/static.yml         deploys the site to GitHub Pages
+├── notebook/
 │   └── apple_appstore_analysis.ipynb    full analysis with outputs (Databricks export)
 ├── results/
-│   ├── cube_for_web.csv                 aggregated table that powers the web page
+│   ├── cube for web.csv                 aggregated table that powers the web page
 │   └── *.csv                            summary tables for each analysis section
 ├── docs/
 │   └── index.html                       web explorer (GitHub Pages)
-└── images/                              chart screenshots
+└── image/                               chart screenshots
 ```
+
+## Charts
+
+![Review inequality across the App Store](image/Review%20inequality%20ascross%20the%20App%20Store.png)
+
+![Permutation importance](image/Permutation%20importance.png)
 
 ## Data
 
@@ -59,7 +66,7 @@ The design follows the GreenLeaf design system.
 - **Cleaning:** de-duplicate on `App_Id`; derive size in MB, app age, days since update, website flag, minimum iOS major version, and developer app count. Reference date is the latest `Updated` value, not today. Years 2008-2021 only (2022 is incomplete).
 - **Definitions:** *hit* = more than 1,000 reviews; *abandoned* = no update for over 730 days.
 - **Inequality:** Lorenz curve and Gini coefficient of review counts.
-- **Model:** HistGradientBoostingClassifier on a 25% sample, stratified 80/20 split, evaluated with AUC (accuracy is misleading at 2% positives); permutation importance for feature ranking.
+- **Model:** HistGradientBoostingClassifier on a 25% sample, stratified 80/20 split, evaluated with AUC (accuracy is misleading at 2% positives); permutation importance for feature ranking. A baseline check (section 9.1) compares the full model with an age-only model and with models that drop `age_days` or `ios_ver`, and reports PR-AUC, to show how much of the AUC comes from app age alone.
 - **Hypothesis tests:** Mann-Whitney U with Cliff's delta, because with hundreds of thousands of rows p-values are tiny even for negligible effects.
 
 ## Limitations
