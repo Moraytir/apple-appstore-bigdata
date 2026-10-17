@@ -6,7 +6,7 @@ Analysis of **1.23 million Apple App Store apps** with PySpark, Spark SQL, Spark
 
 **🔗 Live demo:** https://moraytir.github.io/apple-appstore-bigdata/
 
-Course project for 040563105 Statistical Analysis for Big Data (KMITNB).
+Course project for 040563105 Statistical Analysis for Big Data (KMUTNB).
 
 ## Key findings
 
