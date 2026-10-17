@@ -1,4 +1,4 @@
-# What makes an app "hit" the App Store? 🌿
+# What makes an app "hit" the App Store?
 
 Analysis of **1.23 million Apple App Store apps** with PySpark, Spark SQL, Spark MLlib and scikit-learn on Databricks, plus an interactive web explorer with an app simulator.
 
