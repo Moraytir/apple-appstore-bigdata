@@ -1,4 +1,4 @@
-# What makes an app "hit" the App Store?
+# What makes an app "hit" the App Store? 🌿
 
 Analysis of **1.23 million Apple App Store apps** with PySpark, Spark SQL, Spark MLlib and scikit-learn on Databricks, plus an interactive web explorer with an app simulator.
 
@@ -17,7 +17,7 @@ Course project for 040563105 Statistical Analysis for Big Data (KMITNB).
 | Which categories have the most abandoned apps? | Share not updated for over 2 years: Stickers 65.6%, Games 58.7%. Lowest: Shopping 20.5%, Finance 21.5%. |
 | Does app size matter? | Hit rate rises with size: under 10 MB **0.32%**, 100-500 MB **5.43%**, 500+ MB **8.97%**. |
 | Free or paid? | Raw hit rate is higher for free apps (2.04% vs 1.12%), but in the models "free" adds almost no predictive power once age, size and genre are accounted for. |
-| Indie or app factory? | Indie developers (1 app) average **4.32** stars versus **3.84** for developers with 100+ apps (apps with at least one review). This is the opposite of the hypothesis that big developers rate higher (Cliff's delta -0.271). |
+| Indie or app factory? | Indie developers (1 app) average **4.32** stars versus **3.84** for developers with 100+ apps (apps with at least one review). This is the opposite of the hypothesis that big developers rate higher: developers with more than 10 apps rate **0.49 stars lower** than indie developers (Mann-Whitney U, Cliff's delta -0.265, a small-to-medium effect). |
 | Do updates matter? | Among apps released 2016-2018, those updated within the last 3-12 months are hits 6.76% of the time versus 0.70% for apps untouched for over 2 years. This is a correlation: popular apps may simply earn enough to keep updating. |
 | Can we predict hits? (Spark MLlib) | On all 1.23M apps (1.96% hits): GBT **ROC-AUC 0.884 / PR-AUC 0.199** (about 10× the 0.0196 baseline), Random Forest 0.874 / 0.180, Logistic Regression 0.852 / 0.125. Top predictors: genre, size, app age, minimum iOS version. |
 | Is the model just learning app age? | No. App age alone gives ROC-AUC **0.667**; dropping app age still gives **0.828**, and dropping both age and iOS version gives 0.809. |
@@ -25,13 +25,11 @@ Course project for 040563105 Statistical Analysis for Big Data (KMITNB).
 
 ## Web explorer
 
-A single-page site (`docs/index.html`) that runs entirely in the browser on a pre-aggregated table (`results/cube for web.csv`, embedded in the page).
+A single-page site (`docs/index.html`) with a desktop-style interface: click an app in the Dock to open a window. It runs entirely in the browser on a pre-aggregated table (`results/cube for web.csv`, embedded in the page).
 
 - **App simulator:** pick genre, free/paid, size, team type and cohort, then see how similar apps performed against the market, and what changes if you vary one factor at a time.
-- **Explorer:** preset questions and free filtering with comparison charts.
-- Groups with fewer than 30 apps are hidden or flagged.
-
-The design follows the GreenLeaf design system.
+- **Other windows:** market inequality and trends over time, genre comparison, Spark MLlib model results, k-means app groups, a "where the data lies" page on data-quality issues, and a summary with recommendations.
+- Groups with fewer than 30 apps are flagged as unreliable.
 
 ## Repository structure
 
